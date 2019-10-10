@@ -13,9 +13,17 @@ export class AppComponent {
   title = 'fcc-book-trading';
 
   public books$: AngularFireList<Book[]>;
+  public books: Book[];
 
   constructor(db: AngularFireDatabase) {
-    this.books$ = db.list('/books');
+    db.list('/books').valueChanges().subscribe(
+      (res: Book[]) => {
+        console.log('res', res);
+        this.books = res;
+      }, err => {
+        console.error('err', err);
+      }
+    );
   }
 
 }

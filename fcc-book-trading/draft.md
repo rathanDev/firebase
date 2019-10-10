@@ -1,4 +1,6 @@
 
+Reference:
+https://medium.com/factory-mind/angular-firebase-typescript-step-by-step-tutorial-2ef887fc7d71
 
 ng new fcc-book-trading
 
