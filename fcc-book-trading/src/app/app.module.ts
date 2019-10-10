@@ -7,6 +7,7 @@ import {environment} from '../environments/environment';
 
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -15,8 +16,10 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseCopied, 'fcc-book-trading'),
-    AngularFireDatabaseModule
+    // AngularFireModule.initializeApp(environment.firebaseCopied),
+    AngularFireModule.initializeApp(environment.firebaseNew),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

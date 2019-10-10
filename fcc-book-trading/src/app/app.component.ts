@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 // import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
+import {AngularFirestore} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
 
 
@@ -17,8 +18,35 @@ export class AppComponent {
   public books$: Observable<{}>;
   public books: Book[];
 
-  constructor(db: AngularFireDatabase) {
-    this.books$ = db.list('/books').valueChanges();
+  constructor(db: AngularFireDatabase, store: AngularFirestore) {
+    this.books$ = db.list('/users').valueChanges();
+    // this.books$ = db.list('/oct10project').valueChanges();
+
+    const data = {
+      type: 'coffee1',
+      price: 3
+    };
+
+    store
+      .collection('users')
+      .add(data)
+      .then(res => {
+        console.log('res', res);
+      }, err => {
+        console.log('err', err);
+      });
+
+    store
+      .collection('users')
+      .snapshotChanges()
+      .subscribe(
+        res => {
+          console.log('res', res);
+        },
+        err => {
+          console.log('err', err);
+        }
+      );
   }
 
 }
