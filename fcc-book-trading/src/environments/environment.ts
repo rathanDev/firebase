@@ -13,14 +13,14 @@ export const environment = {
     messagingSenderId: '763399536402'
   },
   firebaseNew: {
-    apiKey: 'AIzaSyA_XxC8vb5KNaqtx_TfJpz-SdRxn11p8pA',
-    authDomain: 'angular-850b4.firebaseapp.com',
-    databaseURL: 'https://angular-850b4.firebaseio.com',
-    projectId: 'angular-850b4',
-    storageBucket: '',
-    messagingSenderId: '1002528644091',
-    appId: '1:1002528644091:web:542fe20149f6a79bea095e',
-    measurementId: 'G-7XSKYN17G3'
+    apiKey: 'AIzaSyA7SE96UA4z4e8NJUaQANvDO-GA7qXkWyY',
+    authDomain: 'oct10project.firebaseapp.com',
+    databaseURL: 'https://oct10project.firebaseio.com',
+    projectId: 'oct10project',
+    storageBucket: 'oct10project.appspot.com',
+    messagingSenderId: '96545103937',
+    appId: '1:96545103937:web:75d77eede47192edc6e6c0',
+    measurementId: 'G-F7TXJJ8KV2'
   }
 };
 
