@@ -8,10 +8,15 @@ import {environment} from '../environments/environment';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RegistrationComponent } from './registration/registration.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RegistrationComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +24,9 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     // AngularFireModule.initializeApp(environment.firebaseCopied),
     AngularFireModule.initializeApp(environment.firebaseNew),
     AngularFireDatabaseModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
