@@ -53,17 +53,12 @@ export class StoreService {
 
     console.log('user', user);
 
-    // this.store
-    //   .collection('users')
-    //   .add(user)
-    //   .then(res => {
-    //     console.log('res', res);
-    //   }, err => {
-    //     console.log('err', err);
-    //   });
+    return this.store
+      .collection('users')
+      .add(user);
   }
 
-  read() {
+  listUsers() {
     return this.store
       .collection('users')
       .valueChanges();

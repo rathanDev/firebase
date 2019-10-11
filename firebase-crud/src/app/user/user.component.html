@@ -1,3 +1,5 @@
+<div *ngIf="loading" class="loader"></div>
+
 <p>Create User</p>
 
 <form [formGroup]="form" (ngSubmit)="createUser()">
@@ -43,8 +45,14 @@
       </button>
     </div>
 
+    <div>Create User Result: </div>
+    <div>{{createUserResult}}</div>
+
   </div>
 </form>
+
+<br>
+<p></p>
 
 <ul>
 
