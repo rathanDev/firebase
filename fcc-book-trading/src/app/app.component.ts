@@ -16,7 +16,7 @@ export class AppComponent {
 
   public books$$: AngularFireList<Book[]>;
   public books$: Observable<{}>;
-  public books: Book[];
+  public anys: {};
 
   constructor(db: AngularFireDatabase, store: AngularFirestore) {
     this.books$ = db.list('/users').valueChanges();
@@ -27,26 +27,38 @@ export class AppComponent {
       price: 3
     };
 
-    store
-      .collection('users')
-      .add(data)
-      .then(res => {
-        console.log('res', res);
-      }, err => {
-        console.log('err', err);
-      });
+    // store
+    //   .collection('users')
+    //   .add(data)
+    //   .then(res => {
+    //     console.log('res', res);
+    //   }, err => {
+    //     console.log('err', err);
+    //   });
 
-    store
+/*    store
       .collection('users')
       .snapshotChanges()
       .subscribe(
-        res => {
+        (res) => {
           console.log('res', res);
+          this.anys = res;
         },
         err => {
           console.log('err', err);
         }
-      );
+      );*/
+
+    store
+      .collection('users')
+      .valueChanges()
+      .subscribe(res => {
+        console.log('Res', res);
+        this.anys = res;
+      }, err => {
+        console.error('Err', err);
+      });
+
   }
 
 }

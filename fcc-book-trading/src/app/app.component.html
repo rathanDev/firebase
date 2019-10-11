@@ -23,7 +23,16 @@
 <p>Book List</p>
 
 <ul>
+
+  <p>Observable</p>
+
   <li *ngFor="let book of books$ | async">
     <pre>{{book | json}}</pre>
   </li>
+
+  <p>List</p>
+  <li *ngFor="let one of anys">
+    <pre>{{one | json}}</pre>
+  </li>
+
 </ul>
