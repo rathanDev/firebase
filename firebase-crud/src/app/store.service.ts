@@ -20,8 +20,24 @@ export class StoreService {
   constructor(db: AngularFireDatabase,
               store: AngularFirestore) {
 
+
+    this.db = db;
+    this.store = store;
+
     // this.books$ = db.list('/users').valueChanges();
     // this.books$ = db.list('/oct10project').valueChanges();
+
+    // store
+    //   .collection('users')
+    //   .valueChanges()
+    //   .subscribe(
+    //     res => {
+    //       console.log('res', res);
+    //     },
+    //     err => {
+    //       console.log('err', err);
+    //     }
+    //   );
 
   }
 
@@ -37,25 +53,20 @@ export class StoreService {
 
     console.log('user', user);
 
-    this.store
-      .collection('users')
-      .add(user)
-      .then(res => {
-        console.log('res', res);
-      }, err => {
-        console.log('err', err);
-      });
+    // this.store
+    //   .collection('users')
+    //   .add(user)
+    //   .then(res => {
+    //     console.log('res', res);
+    //   }, err => {
+    //     console.log('err', err);
+    //   });
   }
 
   read() {
-    this.store
+    return this.store
       .collection('users')
-      .valueChanges()
-      .subscribe(res => {
-        console.log('Res', res);
-      }, err => {
-        console.error('Err', err);
-      });
+      .valueChanges();
   }
 
 }
