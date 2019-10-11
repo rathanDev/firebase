@@ -112,6 +112,8 @@ Firebase has 2 types of databases
 Realtime Database 
 Cloud firestore
 
+Hosted in aws S3
+http://firebase-trivyol.s3-website-us-east-1.amazonaws.com/
 
 
 
